@@ -12,10 +12,9 @@ function App() {
       <div className='user-details'>
         <p>Insira seu nome <input value={name} onChange={e => setName(e.target.value)} /></p>
         <p>Insira sua idade <input type='number' id='ageput' /></p>
-        <button>Verificar</button>
       </div>
 
-      <Usertext />
+      <Usertext name={name}/>
     </div>
   );
 }

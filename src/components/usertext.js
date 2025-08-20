@@ -1,10 +1,13 @@
 import React from 'react'
 
-
-const usertext = () => {
+const usertext = (props) => {
   return (
     <div>
-      <h2>Ola, </h2>
+      <button className="button" onClick={props.name ==="" ? (
+        () => alert('Digite uma informação válida')
+      ) : (
+        () => <p>Oi ${props.name}</p>
+      )} >Verificar</button>
     </div>
   )
 }
