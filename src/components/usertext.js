@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const usertext = (props) => {
+const Usertext = (props) => {
+  const [message, setMessage] = useState('');
+
+  const handleClick = () => {
+    if (props.name === "") {
+      setMessage("Digite uma informação válida");
+    } else {
+      setMessage(`Oi ${props.name}`);
+    }
+  };
+
   return (
     <div>
-      <button className="button" onClick={props.name ==="" ? (
-        () => alert('Digite uma informação válida')
-      ) : (
-        () => <p>Oi ${props.name}</p>
-      )} >Verificar</button>
+      <button className="button" onClick={handleClick}>Verificar</button>
+      <p>{message}</p>
     </div>
-  )
-}
+  );
+};
 
-export default usertext;
+export default Usertext;
