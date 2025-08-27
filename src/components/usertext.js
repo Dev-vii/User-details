@@ -4,10 +4,10 @@ const Usertext = (props) => {
   const [message, setMessage] = useState('');
 
   const handleClick = () => {
-    if (props.name === "" && props.idade === "") {
-      setMessage("Digite uma informação válida");
+    if (props.name === "" || props.idade === "") {
+      alert("Digite informações válidas!")
     } else {
-      setMessage(`Oi ${props.name}, você tem ${props.idade} anos!`);
+      setMessage(`Oi ${props.name}, você tem ${props.idade} anos!`)
     }
   };
 
